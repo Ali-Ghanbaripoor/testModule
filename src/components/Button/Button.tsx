@@ -9,7 +9,7 @@ export interface ButtonProps {
 
 const Button = (props: ButtonProps) => {
     const dispatch = useDispatch();
-    const info = React.useEffect(()=>{
+    React.useEffect(()=>{
         const ipFetcher = async () =>{ 
           const fetchedIp: any = await invoke("fetch_ip");
         const responseURL = `http://${fetchedIp}:9090`;
@@ -22,9 +22,6 @@ const Button = (props: ButtonProps) => {
          }
          ipFetcher();
       },[])
-    return {
-        info
-      }
 }
 
 export default Button;
